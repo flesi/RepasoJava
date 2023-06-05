@@ -4,26 +4,28 @@ import java.util.HashSet;
 public class Main {
 
 	public static void main(String[] args) {
-		int[] arreglo = {1, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9};
-        int[] arregloSinRepetidos = eliminarRepetidos(arreglo);
+		int[] array = {1, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9};
+        int[] arraySinRepetidos = eliminarRepetidos(array);
 
-		System.out.println("Arreglo original: " + Arrays.toString(arreglo));
-        System.out.println("Arreglo sin repetidos: " + Arrays.toString(arregloSinRepetidos));
+		System.out.println("Arreglo original: " + Arrays.toString(array));
+        System.out.println("Arreglo sin repetidos: " + Arrays.toString(arraySinRepetidos));
 
 	}
 
-	public static int[] eliminarRepetidos(int[] arreglo) {
+	public static int[] eliminarRepetidos(int[] array) {
 		HashSet<Integer> conjunto = new HashSet<>();
-		for (int i = 0; i < arreglo.length; i++) {
-			conjunto.add(arreglo[i]);
+		
+		for (int i = 0; i < array.length; i++) {
+			conjunto.add(array[i]);
 		}
-		int[] arregloSinRepetidos = new int[conjunto.size()];
+		
+		int[] arraySinRepetidos = new int[conjunto.size()];
         int indice = 0;
         for (int elemento : conjunto) {
-            arregloSinRepetidos[indice++] = elemento;
+        	arraySinRepetidos[indice++] = elemento;
         }
 
-        return arregloSinRepetidos;
+        return arraySinRepetidos;
 		
 	}
 }
