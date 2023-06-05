@@ -1,0 +1,11 @@
+En este programa, se declara una cadena de texto llamada cadena. Luego, se llama a la función clasificarCaracteres pasando esta cadena como argumento.
+
+La función clasificarCaracteres itera sobre cada carácter de la cadena utilizando cadena.toCharArray(). Para cada carácter, se utilizan los métodos estáticos de la clase Character para clasificarlo.
+
+Character.isLetter(caracter): Verifica si el carácter es una letra.
+Character.isUpperCase(caracter): Verifica si el carácter es una letra mayúscula.
+Character.isDigit(caracter): Verifica si el carácter es un dígito.
+Character.isWhitespace(caracter): Verifica si el carácter es un espacio en blanco.
+Según el resultado de estas comprobaciones, se imprime un mensaje indicando la clasificación del carácter.
+
+El programa muestra cada carácter de la cadena y clasifica si es una letra mayúscula, una letra minúscula, un dígito, un espacio en blanco u otro carácter según las comprobaciones realizadas con los métodos de la clase Character.
