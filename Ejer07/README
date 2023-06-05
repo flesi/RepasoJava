@@ -1,0 +1,3 @@
+En este programa, se declara un arreglo de números enteros llamado valores. Luego, se llama a la función pintarDiagramaBarras pasando este arreglo como argumento. La función recorre los valores del arreglo y verifica si son menores o iguales a 20.
+
+Si el valor es menor o igual a 20, se imprime el valor seguido de una serie de asteriscos (*) en una nueva línea. La cantidad de asteriscos corresponde al valor en cuestión. Esto representa visualmente una barra en el diagrama de barras.
