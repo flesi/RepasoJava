@@ -1,0 +1,1 @@
+En este ejemplo, se definen dos arreglos de enteros (array1 y array2). Luego, se llama a la función sumarArrays pasando ambos arreglos como argumentos. La función verifica si los arreglos tienen la misma longitud y luego suma los valores correspondientes de ambos arreglos. La suma resultante se devuelve como resultado.
