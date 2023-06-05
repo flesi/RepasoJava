@@ -1,0 +1,5 @@
+En este programa, se declaran dos objetos LocalDate, fecha1 y fecha2, que representan las fechas de interés.
+
+Luego, se llama a las funciones obtenerDiferenciaEnDias, obtenerDiferenciaEnMeses y obtenerDiferenciaEnAnios, pasando como parámetros las fechas fecha1 y fecha2. Estas funciones utilizan los métodos between de la clase ChronoUnit para calcular la diferencia en días, meses y años, respectivamente.
+
+Finalmente, se imprime la diferencia obtenida en días, meses y años en la consola.
