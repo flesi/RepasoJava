@@ -1,0 +1,3 @@
+En este programa, se utiliza la clase Scanner para obtener un número entero ingresado por el usuario. Luego, se ejecuta un bucle for desde 1 hasta el número ingresado. En cada iteración, se muestra el valor actual seguido de las letras obtenidas a través de la función obtenerLetras.
+
+La función obtenerLetras crea un StringBuilder para ir construyendo una cadena de letras. Se utiliza una variable letra inicializada con el carácter 'a'. Luego, en cada iteración, se agrega la letra actual al StringBuilder y se incrementa la variable letra. Si la variable letra supera la letra 'z', se reinicia a 'a'. Esto asegura que se obtengan las letras en un ciclo continuo desde 'a' hasta 'z'.
