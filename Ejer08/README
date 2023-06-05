@@ -1,0 +1,3 @@
+En este programa, se declara un arreglo de valores enteros llamado valores. Luego, se llama a la función crearMatriz pasando este arreglo como argumento. La función determina el número de filas como la longitud del arreglo valores y establece el número de columnas como 5.
+
+Se crea una matriz matriz con las dimensiones calculadas. Luego, se utiliza un par de bucles for para llenar la matriz según las reglas establecidas. El valor en la posición [i][j] de la matriz será el valor en la posición i del arreglo valores más el valor de la columna j.
