@@ -1,0 +1,3 @@
+En este programa, se declara un arreglo de valores double llamado valoresDouble. Luego, se llama a la función convertirDoubleAInt pasando este arreglo como argumento. La función crea un nuevo arreglo de enteros valoresInt con la misma longitud que valoresDouble. Luego, itera sobre los elementos de valoresDouble y utiliza el casting (int) para transformar cada valor double a int y almacenarlo en el arreglo valoresInt.
+
+En el método main, se imprime el arreglo original valoresDouble y el arreglo convertido valoresInt. La salida sería algo como:
