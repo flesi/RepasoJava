@@ -1,0 +1,7 @@
+En este programa, se declara un arreglo de números enteros llamado arreglo con valores repetidos. Luego, se llama a la función eliminarRepetidos pasando este arreglo como argumento.
+
+La función eliminarRepetidos utiliza un HashSet para almacenar los valores únicos del arreglo. Se recorre el arreglo y se agrega cada elemento al conjunto. Como un HashSet no permite elementos duplicados, los valores repetidos se eliminan automáticamente.
+
+Luego, se crea un nuevo arreglo arregloSinRepetidos con el tamaño del conjunto de elementos únicos. Se recorre el conjunto y se copian los elementos en el nuevo arreglo.
+
+Finalmente, el programa imprime el arreglo original y el arreglo resultante sin elementos repetidos en la consola.
