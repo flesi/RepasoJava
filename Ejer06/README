@@ -1,0 +1,5 @@
+En este programa, se declara un arreglo de cadenas llamado cadenas. Luego, se llama a la función concatenarCadenasSinRepetir pasando este arreglo como argumento. La función utiliza un StringBuilder para construir la cadena concatenada sin repetir caracteres.
+
+Dentro de un bucle for-each, se recorre cada cadena del arreglo. Luego, se realiza un bucle for interno para iterar sobre los caracteres de cada cadena. En cada iteración, se obtiene el carácter actual de la cadena y se verifica si ya está presente en el StringBuilder utilizando el método indexOf. Si el carácter no se encuentra en la cadena construida, se agrega al StringBuilder.
+
+Al finalizar los bucles, se devuelve la cadena resultante obtenida del StringBuilder.
