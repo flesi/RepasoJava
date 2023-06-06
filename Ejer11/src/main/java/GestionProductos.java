@@ -3,6 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class GestionProductos {
 
@@ -41,13 +42,13 @@ public class GestionProductos {
 	
 	
 //	buscar producto por código.
-	public Producto buscarPorCodigo(String codigo) throws SQLException {
-		ArrayList<Producto> productos = cargarProductos();
-		return productos.stream()
-				.filter(producto -> producto.getCodigoProducto().equals(codigo))
-				.findFirst()
-				.orElse(null);
-	}
+//	public Optional<Producto> buscarPorCodigo(String codigo) throws SQLException {
+//		ArrayList<Producto> productos = cargarProductos();
+//		return productos.stream()
+//				.filter(producto -> producto.getCodigoProducto().equals(codigo))
+//				.findFirst()
+//				.orElse(null);
+//	}
 //	retornar los productos con precio de compra entre dos valores. Ordenar por precio de compra ascendentemente.
 //	retornar los productos de una escala concreta
 //	retornar las categorías existentes. Una sola vez cada una.

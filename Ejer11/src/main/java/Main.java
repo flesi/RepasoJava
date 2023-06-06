@@ -7,12 +7,12 @@ public class Main {
 
 		GestionProductos gProductos = new GestionProductos();
 
-		try {
-			System.out.println(gProductos.buscarPorCodigo("S10_1949").toString());
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+////			System.out.println(gProductos.buscarPorCodigo("S10_1949").toString());
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		
 	}

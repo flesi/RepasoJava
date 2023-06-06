@@ -7,8 +7,8 @@ public class Main {
 		int[] array = {1, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9};
         int[] arraySinRepetidos = eliminarRepetidos(array);
 
-		System.out.println("Arreglo original: " + Arrays.toString(array));
-        System.out.println("Arreglo sin repetidos: " + Arrays.toString(arraySinRepetidos));
+		System.out.println("Array original: " + Arrays.toString(array));
+        System.out.println("Array sin repetidos: " + Arrays.toString(arraySinRepetidos));
 
 	}
 

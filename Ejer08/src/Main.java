@@ -3,7 +3,7 @@ import java.util.Iterator;
 public class Main {
 
 	public static void main(String[] args) {
-        int[] valores = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] valores = {10, 5, 6, 7, 1, 20, 500, 13};
 
         int [][] matriz = crearMatriz(valores);
         
@@ -20,7 +20,6 @@ public class Main {
 	public static int[][] crearMatriz(int[] valores){
 		int filas = valores.length;
 		int columnas = 5;
-		
 		int [][] matriz = new int[filas][columnas];
 		
 		for (int i = 0; i < filas; i++) {
