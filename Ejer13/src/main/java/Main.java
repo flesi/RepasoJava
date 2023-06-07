@@ -12,7 +12,13 @@ public class Main {
 		
 		try {
 			try {
+				
+				gAlumnos.notasExamen(1);
 				gAlumnos.notasExamen(2);
+				gAlumnos.notasExamen(3);
+				gAlumnos.notasExamen(4);
+				
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

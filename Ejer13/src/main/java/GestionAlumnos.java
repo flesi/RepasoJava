@@ -20,7 +20,7 @@ public class GestionAlumnos {
 
 	public static void notasExamen(int idExamen) throws SQLException, IOException, DocumentException {
 		Connection conex = ConectarBd.getConnection();
-	    String sql = "SELECT * FROM examenes WHERE id = ?";
+	    String sql = "SELECT * FROM notas N INNER JOIN alumnos a ON n.idalumno = a.id INNER JOIN examenes e ON n.idexamen = e.id WHERE idexamen = ? ORDER BY a.nombre ASC";
 	    PreparedStatement ps = conex.prepareStatement(sql, 
 	    		ResultSet.TYPE_SCROLL_SENSITIVE, 
 	            ResultSet.CONCUR_UPDATABLE);
@@ -32,49 +32,59 @@ public class GestionAlumnos {
 	    int nFilas = rs.getRow();
 	    rs.beforeFirst();
 	    
+	    
 	    if (nFilas > 0) {
+	    	
+	    	 //Creamos un documento pdf
+            Document documento = new Document();
+            //creamos un archivo binario
+            OutputStream ficheroPdf = Files.newOutputStream(Paths.get("NotasExamenID_" + idExamen + ".pdf"));
+            
+            //Asociar documento con FileOutputStream e indicar espacio entre líneas
+            PdfWriter.getInstance(documento, ficheroPdf).setInitialLeading(20);
+            documento.open();
+            
+            //fuentes
+            Font fontArialNormal = new Font(FontFactory.getFont("arial", 8, Font.NORMAL, BaseColor.BLACK));  
+            Font fontArialNegrita = new Font(FontFactory.getFont("arial", 8, Font.BOLD, BaseColor.BLACK));  
+	    						   	        	
+		            
+					// CABECERA DEL DOCUMENTO PDF
+		            //añadir tabla cabecera
+		            PdfPTable tableCab = new PdfPTable(2); //2 columnas
+		            
+		            rs.next();
+		            //nueva frase y añadimos a tabla
+		            Phrase texto = new Phrase("ID Examen: " + rs.getInt("idexamen"), fontArialNegrita);            
+		            tableCab.addCell(texto);
+		            texto = new Phrase("Descripcion: " + rs.getString("descripcion"), fontArialNegrita);
+		            tableCab.addCell(texto);
+		        	
+		            //Añadimos tableCab al documento
+		            documento.add(tableCab);
+
+			
+			//Añadimos dos lineas en blanco
+            documento.add(new Phrase(" "));
+            documento.add(new Phrase(" "));
+			
+			rs.beforeFirst();
 			while (rs.next()) {
-				System.out.print("ID Examen: " + rs.getInt("id"));
-				System.out.println(" Descripcion: " + rs.getString("descripcion"));
-								
-	        	 //Creamos un documento pdf
-	            Document documento = new Document();
-	            //creamos un archivo binario
-	            OutputStream ficheroPdf = Files.newOutputStream(Paths.get("documento.pdf"));
-	            
-	            //Asociar documento con FileOutputStream e indicar espacio entre líneas
-	            PdfWriter.getInstance(documento, ficheroPdf).setInitialLeading(20);
-	            documento.open();
-	            
-	            //fuentes
-	            Font fontArialNormal = new Font(FontFactory.getFont("arial", 8, Font.NORMAL, BaseColor.BLACK));  
-	            Font fontArialNegrita = new Font(FontFactory.getFont("arial", 8, Font.BOLD, BaseColor.BLACK));  
-	        	
-	            // CABECERA DEL DOCUMENTO PDF
-	            
-	            //añadir tabla cabecera
-	            PdfPTable tableCab = new PdfPTable(2); //2 columnas
-	            
-	            //nueva frase y añadimos a tabla
-	            Phrase texto = new Phrase("ID Examen: " + rs.getInt("id"), fontArialNegrita);            
-	            tableCab.addCell(texto);
-	            texto = new Phrase("Descripcion: " + rs.getString("descripcion"), fontArialNegrita);
-	            tableCab.addCell(texto);
-	        	
-	            //Añadimos tableCab al documento
-	            documento.add(tableCab);
-	            
-	            //Añadimos dos lineas en blanco
-	            documento.add(new Phrase(" "));
-	            documento.add(new Phrase(" "));
-	            
+
 	            PdfPTable tableDetalle = new PdfPTable(3);
 	            
+	            texto = new Phrase("Apellido: " + rs.getString("apellidos"), fontArialNegrita);            
+	            tableDetalle.addCell(texto);
+	            texto = new Phrase("Nombre: " + rs.getString("nombre"), fontArialNegrita);            
+	            tableDetalle.addCell(texto);
+	            texto = new Phrase("Nota: " + rs.getDouble("nota"), fontArialNegrita);            
+	            tableDetalle.addCell(texto);
 	            
-	            
-	            documento.close();
-	            
+	            documento.add(tableDetalle);
+
 			}
+			
+			documento.close();
 		}
 	    
 	   
