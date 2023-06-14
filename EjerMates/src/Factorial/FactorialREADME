@@ -1,0 +1,3 @@
+En este programa, la función factorial calcula el factorial de un número dado utilizando un bucle for. Luego, la función calcularFactorialSuma toma un número y calcula la suma de los factoriales de cada uno de sus dígitos. Utiliza un bucle while para obtener cada dígito del número dividiéndolo sucesivamente por 10 y tomando el residuo. Luego, calcula el factorial de cada dígito utilizando la función factorial y los suma a la variable sumaFactoriales.
+
+En el método main, se puede cambiar el valor de numero para calcular la suma de factoriales de otro número. Al ejecutar el programa, mostrará el resultado de la suma de los factoriales de los dígitos del número. En el ejemplo anterior, se calcula la suma de factoriales para el número 145.

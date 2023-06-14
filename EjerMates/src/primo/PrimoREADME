@@ -1,0 +1,16 @@
+En este programa, la función esPrimo toma un número como argumento y verifica si es primo o no. Si el número es menor o igual a 1, se considera que no es primo. Luego, se realiza un bucle for desde 2 hasta la raíz cuadrada del número, verificando si el número es divisible por alguno de los valores en ese rango. Si es divisible, se devuelve false indicando que no es primo. Si no se encuentra ningún divisor, se devuelve true indicando que es primo.
+
+En el método main, se puede cambiar el valor de numero para verificar otros números. Al ejecutar el programa, mostrará un mensaje indicando si el número es primo o no. En el ejemplo anterior, se verifica si el número 17 es primo.
+
+
+
+
+La razón por la que el bucle for se ejecuta desde 2 hasta la raíz cuadrada del número, en lugar de llegar hasta el mismo número, se debe a una propiedad matemática de los números primos.
+
+Cuando se verifica si un número es primo, no es necesario comprobar todos los números hasta el mismo número. Basta con comprobar hasta la raíz cuadrada del número para determinar si es divisible por algún otro número.
+
+Supongamos que tenemos un número n que no es primo y tiene un factor divisor a. Esto implica que también tiene otro factor divisor b, donde b = n/a. Si ambos factores fueran mayores que la raíz cuadrada de n, entonces su producto (a * b = n) sería mayor que n, lo cual es una contradicción. Esto significa que al menos uno de los factores debe ser menor o igual que la raíz cuadrada de n.
+
+Por lo tanto, al verificar divisibilidad, solo necesitamos comprobar hasta la raíz cuadrada de n para encontrar cualquier posible divisor. Si no encontramos divisores en ese rango, podemos concluir de manera segura que el número es primo.
+
+Este enfoque reduce significativamente el número de iteraciones necesarias en el bucle for, lo que mejora la eficiencia del algoritmo.

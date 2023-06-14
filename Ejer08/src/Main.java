@@ -22,7 +22,7 @@ public class Main {
 		int columnas = 5;
 		int [][] matriz = new int[filas][columnas];
 		
-		for (int i = 0; i < filas; i++) {
+		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < columnas; j++) {
 				matriz[i][j] = valores[i] +j;
 			}

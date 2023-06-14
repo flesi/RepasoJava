@@ -1,0 +1,7 @@
+Un número fuerte es aquel que la suma de los factoriales de sus dígitos es igual al número original. Aquí tienes un programa en Java que verifica si un número dado es fuerte o no:
+
+
+
+En este programa, la función factorial calcula el factorial de un número dado utilizando un bucle for. La función esFuerte toma un número y verifica si es fuerte o no. Utiliza un bucle while para obtener cada dígito del número dividiéndolo sucesivamente por 10 y tomando el residuo. Luego, calcula el factorial de cada dígito utilizando la función factorial y los suma a la variable sumaFactoriales. Finalmente, compara la suma de factoriales con el número original para determinar si es fuerte o no.
+
+En el método main, se puede cambiar el valor de numero para comprobar si otro número es fuerte. Al ejecutar el programa, mostrará un mensaje indicando si el número es fuerte o no. En el ejemplo anterior, se verifica si el número 145 es fuerte.

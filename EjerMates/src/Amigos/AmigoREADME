@@ -1,0 +1,5 @@
+En este programa, la función sonAmigos toma dos números como argumentos y verifica si son números amigos o no. Los números amigos son dos números enteros positivos donde la suma de los divisores propios (excluyendo al número en sí mismo) del primer número es igual al segundo número, y la suma de los divisores propios del segundo número es igual al primer número.
+
+La función calcularSumaDivisores se encarga de calcular la suma de los divisores propios de un número dado. Itera desde 1 hasta la mitad del número y verifica si cada número es divisor del número dado. Si lo es, se suma a la variable suma. Finalmente, devuelve la suma total de los divisores propios.
+
+En el método main, se pueden cambiar los valores de numero1 y numero2 para verificar otros pares de números. Al ejecutar el programa, mostrará un mensaje indicando si los números son amigos o no. En el ejemplo anterior, se verifica si los números 220 y 284 son amigos.
