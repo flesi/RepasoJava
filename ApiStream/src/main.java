@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -132,8 +133,71 @@ public class main {
 		long cantidadNombres = nombres.stream()
 		                             .count();
 		// Resultado: 3
+		
+		
+//		groupBy: 
+//		Esta operación se utiliza para agrupar los elementos del Stream según un criterio específico
+//		y generar un Mapa donde la clave representa el resultado de la agrupación y el valor es una lista de los elementos correspondientes.
+		
+//		Map<String, List<Producto>> productosPorCategoria = productos.stream()
+//	            .collect(Collectors.groupingBy(Producto::getCategoria));
+		
+		List<String> nombresGropBy = Arrays.asList("Juan", "María", "Pedro", "Ana");
+
+		Map<Character, List<String>> nombresPorInicial = nombresGropBy.stream()
+		                                                       .collect(Collectors.groupingBy(nombre -> nombre.charAt(0)));
 
 		
+		
+		
+//		min y max: 
+//		Estas operaciones se utilizan para encontrar el valor mínimo (min) o máximo (max) 
+//		dentro de un Stream en función de un criterio de ordenación.
+//		min:
+		List<Integer> numerosMin = Arrays.asList(5, 2, 8, 1, 6);
+
+		Optional<Integer> minimo = numerosMin.stream()
+		                                  .min(Integer::compare);
+
+		minimo.ifPresent(valor -> System.out.println("Mínimo: " + valor));
+		
+//		max:
+		List<Integer> numerosMax = Arrays.asList(5, 2, 8, 1, 6);
+
+		Optional<Integer> maximo = numerosMax.stream()
+		                                  .max(Integer::compare);
+
+		maximo.ifPresent(valor -> System.out.println("Máximo: " + valor));
+
+
+		
+//		anyMatch, allMatch y noneMatch: 
+//		Estas operaciones se utilizan para verificar si algún elemento (anyMatch), 
+//		todos los elementos (allMatch) o ninguno de los elementos (noneMatch) de un Stream cumplen con una determinada condición.
+//		anyMatch:
+		List<Integer> numerosAnyMatch = Arrays.asList(1, 2, 3, 4, 5);
+
+		boolean hayNumerosPares = numerosAnyMatch.stream()
+		                                .anyMatch(num -> num % 2 == 0);
+
+		System.out.println("¿Hay números pares? " + hayNumerosPares);
+
+//		allMatch:
+		List<Integer> numerosAllMatch = Arrays.asList(2, 4, 6, 8, 10);
+
+		boolean todosSonPares = numerosAllMatch.stream()
+		                              .allMatch(num -> num % 2 == 0);
+
+		System.out.println("¿Son todos números pares? " + todosSonPares);
+
+//		noneMatch:
+		List<Integer> numerosNoneMatch = Arrays.asList(1, 3, 5, 7, 9);
+
+		boolean ningunoEsPar = numerosNoneMatch.stream()
+		                             .noneMatch(num -> num % 2 == 0);
+
+		System.out.println("¿Ninguno de los números es par? " + ningunoEsPar);
+
 	}
 
 }
